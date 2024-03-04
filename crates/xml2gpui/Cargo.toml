@@ -8,7 +8,7 @@ homepage = "https://github.com/tpisto/xml2gpui"
 description = "Converts XML to GPUI elements"
 
 [dependencies]
-gpui = { git = "https://github.com/zed-industries/zed.git", rev = "94593dca4bd906ad38aa5a15e8992e2ee188bd29" }
+gpui = { git = "https://github.com/zed-industries/zed.git", rev = "94593dca4bd906ad38aa5a15e8992e2ee188bd29", version = "0.1.0" }
 xml2gpui_macros = { path = "../xml2gpui_macros", version = "0.1.0" }
 quick-xml = "0.31.0"
 futures = "0.3.30"
