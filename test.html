@@ -1,6 +1,29 @@
-<div class="flex justify-center items-center h-screen bg-[#87CEEB]">
+<div class="relative flex size-full justify-center items-end h-screen bg-[#87CEEB] overflow-hidden p-0">
+  <!-- Snowfall -->
+  <div class="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-between p-8">
+    <!-- Multiple layers of snowflakes for a falling effect -->
+    <div class="space-y-8 w-full flex justify-between">
+      <!-- Top layer of snowflakes -->
+      <div class="w-3 h-3 bg-[#FFFFFF] rounded-full"></div>
+      <div class="w-2 h-2 bg-[#FFFFFF] rounded-full"></div>
+      <!-- ... (more snowflakes here) ... -->
+    </div>
+    <div class="space-y-10 w-full flex justify-around">
+      <!-- Middle layer of snowflakes -->
+      <div class="w-4 h-4 bg-[#FFFFFF] rounded-full"></div>
+      <div class="w-1 h-1 bg-[#FFFFFF] rounded-full"></div>
+      <!-- ... (more snowflakes here) ... -->
+    </div>
+    <div class="space-y-12 w-full flex justify-between">
+      <!-- Bottom layer of snowflakes -->
+      <div class="w-2 h-2 bg-[#FFFFFF] rounded-full"></div>
+      <div class="w-3 h-3 bg-[#FFFFFF] rounded-full"></div>
+      <!-- ... (more snowflakes here) ... -->
+    </div>
+  </div>
+
   <!-- Snowman container -->
-  <div class="space-y-2">
+  <div class="space-y-2 mb-10">
     <!-- Head -->
     <div class="w-24 h-24 bg-[#FFFFFF] rounded-full mx-auto flex items-center justify-center">
       <!-- Eyes and mouth -->
@@ -27,4 +50,9 @@
     <!-- Bottom -->
     <div class="w-40 h-40 bg-[#FFFFFF] rounded-full mx-auto"></div>
   </div>
+
+  <!-- Ground snow -->
+  <div class="absolute bottom-0 left-0 w-full h-20 bg-[#FFFFFF]"></div>
+
+  <img id="snowflake" class="top-[0px] left-[0px] absolute w-full h-full" src="https://www.pngall.com/wp-content/uploads/13/Snowflake-PNG-Image-File.png"></img>
 </div>

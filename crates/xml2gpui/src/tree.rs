@@ -320,6 +320,23 @@ fn set_attributes<T: Styled>(mut element: T, attributes: &Vec<(String, String)>)
                             _ => element.rounded(absolute_length), // Default to applying rounding to all corners
                         }
                     }
+                    else if let Some(suffix) = class_name.strip_prefix("top-[") {
+                        let absolute_length = extract_length_from_class_name(suffix.trim_end_matches(']'));
+                        element.top(absolute_length)
+                    }
+                    else if let Some(suffix) = class_name.strip_prefix("left-[") {
+                        let absolute_length = extract_length_from_class_name(suffix.trim_end_matches(']'));
+                        element.left(absolute_length)
+                    }
+                    else if let Some(suffix) = class_name.strip_prefix("w-[") {
+                        let absolute_length = extract_length_from_class_name(suffix.trim_end_matches(']'));
+                        element.w(absolute_length)
+                    }
+                    else if let Some(suffix) = class_name.strip_prefix("h-[") {
+                        let absolute_length = extract_length_from_class_name(suffix.trim_end_matches(']'));
+                        println!("Height: {:?}", absolute_length);
+                        element.h(absolute_length)
+                    }
                     else {
                         println!("Unrecognized class: {}", class_name);
                         element
@@ -336,8 +353,8 @@ fn set_attributes<T: Styled>(mut element: T, attributes: &Vec<(String, String)>)
 fn extract_length_from_class_name(class_name: &str) -> AbsoluteLength {
     let numeric_part: String = class_name
         .chars()
-        .skip_while(|c| !c.is_digit(10) && *c != '.')
-        .take_while(|c| c.is_digit(10) || *c == '.')
+        .skip_while(|c| !c.is_digit(10) && *c != '.' && *c != '-')
+        .take_while(|c| c.is_digit(10) || *c == '.' || *c == '-')
         .collect();
 
     let unit_part: String = class_name
