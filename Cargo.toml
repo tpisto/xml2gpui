@@ -1,0 +1,3 @@
+[workspace]
+members = [ "crates/example", "crates/xml2gpui", "crates/xml2gpui_macros"]
+resolver = "2"
